@@ -1,0 +1,6 @@
+SRR28387650   /home/Vaishnavi/Rnaseq/SRR28387650/SRR28387650_transcripts.gtf
+SRR28387651   /home/Vaishnavi/Rnaseq/SRR28387651/SRR28387651_transcripts.gtf
+SRR28387652   /home/Vaishnavi/Rnaseq/SRR28387652/SRR28387652_transcripts.gtf
+SRR28387657   /home/Vaishnavi/Rnaseq/SRR28387657/SRR28387657_transcripts.gtf
+SRR28387658   /home/Vaishnavi/Rnaseq/SRR28387658/SRR28387658_transcripts.gtf
+SRR28387660   /home/Vaishnavi/Rnaseq/SRR28387660/SRR28387660_transcripts.gtf
