@@ -51,16 +51,7 @@ The bulk RNA-seq analysis was performed using the following workflow:
 10. **Functional Enrichment & Visualization:** `gprofiler2` (R) was used for GO (`BP`, `MF`, `CC`), `KEGG`, and `Reactome` enrichment analyses, alongside `ggplot2` and `pheatmap` for PCA, Volcano, Heatmap, and enrichment dotplot visualizations.
 
 
-## Key Results
 
-Differential expression analysis (`padj < 0.05`, `|log2FC| > 1`) identified **238 significant DEGs**:
-
-- **173 upregulated genes** in SLE vs. Control
-- **65 downregulated genes** in SLE vs. Control
-
-### Biological Interpretation (g:Profiler Enrichment)
-- **Upregulated Signatures (Immune & Type I/II Interferon Activation):** Strong enrichment of **Interferon alpha/beta signaling** (`R-HSA-909733`, FDR = 1.92 × 10⁻¹⁰), **Cytokine Signaling in Immune system** (`R-HSA-1280215`, FDR = 1.92 × 10⁻¹⁰), and **defense response to virus** (`GO:0051607`, FDR = 6.55 × 10⁻⁹), driven by classic SLE Interferon-Stimulated Genes (`MX1`, `OASL`, `IFI6`, `IFI27`, `IFI44L`, `IFIT5`, `USP18`) alongside `IRF7`, `SOCS1`, `SOCS3`, `IL10`, and `FOXP3`.
-- **Downregulated Signatures (Chemokine Receptor Suppression):** Coordinated downregulation of **C-C chemokine receptor activity** (`GO:0016493`, FDR = 9.46 × 10⁻⁷) and **Chemokine signaling pathway** (`KEGG:04062`, FDR = 2.35 × 10⁻⁴), driven by `CCR2`, `CCR4`, `CCR5`, `CX3CR1`, `CXCR6`, and `CCL4`.
 
 ## Repository Structure
 
