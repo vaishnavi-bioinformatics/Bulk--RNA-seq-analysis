@@ -35,6 +35,22 @@ Using publicly available sequencing data, transcript abundances were quantified 
 4. **DEG Filtering:** Identification of significant genes (`padj < 0.05` and `|log2FoldChange| > 1`).
 5. **Visualization & Functional Enrichment:** PCA, Volcano plot, Top 50 DEG Heatmap, and functional enrichment (`GO:BP`, `GO:MF`, `GO:CC`, `KEGG`, `Reactome`) via `gprofiler2`.
 
+   ## Bioinformatics Workflow
+
+The bulk RNA-seq analysis was performed using the following workflow:
+
+1. **Data Download:** `prefetch` and `fasterq-dump` (SRA Toolkit) were used to download the paired-end raw sequencing data from NCBI SRA (`PRJNA108950`).
+2. **Quality Control:** `FastQC` was used to assess the base quality scores, GC content, and adapter contamination of raw sequencing reads.
+3. **Quality Trimming:** `Trimmomatic` (v0.39) was used with NexteraPE adapter sequences (`nextera_adapter.fa`) for adapter removal and quality trimming, followed by post-trimming `FastQC` verification.
+4. **Reference Genome Alignment:** `HISAT2` was used to align high-quality paired-end reads to the human reference genome (`hg19`).
+5. **SAM/BAM Processing:** `SAMtools` was used to convert SAM alignments to BAM format, coordinate-sort the reads, and generate BAM index files.
+6. **Reference GTF Harmonization & Transcript Quantification:** Chromosome prefixes (`chr`) were standardized in `hg19.ncbiRefSeq.gtf` to match the `hg19_NoChr` index, and `StringTie` (`-e`) was used to assemble transcripts and estimate abundance levels.
+7. **Count Matrix Generation:** `prepDE.py` was used to aggregate StringTie transcript estimates across all samples into a raw gene-level count matrix (`gene_count_matrix.csv`).
+8. **Differential Expression Analysis:** `DESeq2` (R) was used to normalize counts and model differential gene expression (`~ condition`, with `control` as the reference group).
+9. **DEG Filtering & Gene List Extraction:** Significantly differentially expressed genes were filtered (`padj < 0.05` and `|log2FoldChange| > 1`), identifying **173 upregulated** and **65 downregulated** genes in SLE compared to controls.
+10. **Functional Enrichment & Visualization:** `gprofiler2` (R) was used for GO (`BP`, `MF`, `CC`), `KEGG`, and `Reactome` enrichment analyses, alongside `ggplot2` and `pheatmap` for PCA, Volcano, Heatmap, and enrichment dotplot visualizations.
+
+
 ## Key Results
 
 Differential expression analysis (`padj < 0.05`, `|log2FC| > 1`) identified **238 significant DEGs**:
