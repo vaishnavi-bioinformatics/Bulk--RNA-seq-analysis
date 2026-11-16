@@ -2,7 +2,7 @@
 library(gprofiler2)
 library(ggplot2)
 
-setwd("D:/RNA SEQ")
+setwd("RNA SEQ")
 
 # Ensure output directories exist
 dir.create("results/tables", recursive = TRUE, showWarnings = FALSE)
