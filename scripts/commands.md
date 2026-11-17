@@ -11,7 +11,7 @@ do
         -x /home/BIB/Databases/HumanGenome_HG37/hg19_NoChr_hisat2_index \
         -1 ${i}_1p.fastq.gz \
         -2 ${i}_2p.fastq.gz \
-        -S ${i}.sam
+        -S ${i}.sam 
 
     # 3. SAM to BAM Conversion
     samtools view -b ${i}.sam -o ${i}.bam
