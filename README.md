@@ -66,6 +66,6 @@ The bulk RNA-seq analysis was performed using the following workflow:
 ## How to Run
 
 ```bash
-Rscript scripts/01_deseq2_analysis.R
-Rscript scripts/02_go_enrichment.R
+Rscript scripts/01_deseq_script.R
+Rscript scripts/02_FUNCTIONAL_ENRICHMENT.R
 ```
